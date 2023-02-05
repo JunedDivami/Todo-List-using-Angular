@@ -1,16 +1,5 @@
 
-<app-header></app-header>
-<div>
-    <h1>Added Tasks:</h1>
-    <hr>
-    <ol>
-    <li *ngFor="let todo of todos">
-    <app-display>
-        <h3>{{todo.title}}</h3>
-        <p>{{todo.desc}}</p>
-        <div class="btn btn-danger" (click)="onDelete(todo)">Delete</div>
-    </app-display></li>
-    </ol>
-</div>
-<!-- <app-display *ngFor="let todo of todos">{{todo}}</app-display> -->
+<app-header [data]="i"></app-header>
+<app-display [todos]="todos" (sendDelete)="onDelete($event)"></app-display>
+
 

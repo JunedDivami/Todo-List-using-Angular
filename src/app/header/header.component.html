@@ -1,10 +1,14 @@
 <div>
 <form (ngSubmit)="onSubmit()">
-<div class="form-group">Task Title: <input [(ngModel)]="title" id="title" name="title"></div>
-<div class="form-group">Task Description: <input [(ngModel)]="desc" id="desc" name="desc"></div>
+<!-- <div class="form-group">Task Title: <input [(ngModel)]="title" id="title" name="title"></div> -->
+<!-- <div class="form-group">Task Description: <input [(ngModel)]="desc" id="desc" name="desc"></div> -->
+
+<div class="form-group">Task Title: <app-input-com [d]="i" (sendData)="dataFromInput1($event)"></app-input-com></div>
+<div class="form-group">Task Description: <app-input-com [d]="i" (sendData)="dataFromInput2($event)"></app-input-com></div>
 
 <button class="btn btn-primary" type="submit" >Add</button>
 
 </form>
-<app-input-com></app-input-com>
+<!-- <app-input-com [d]="i" (sendData)="dataFromInput1($event)"></app-input-com> -->
+<!-- <app-input-com [d]="i" (sendData)="dataFromInput2($event)"></app-input-com> -->
 </div>

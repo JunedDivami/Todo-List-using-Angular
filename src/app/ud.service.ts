@@ -29,20 +29,21 @@ export class UdService {
     return this.todo;
   
   }
-  recievetodo(){
-    return this.todo;
-  }
-
-  // deletetodo(dtodo:Todo){
-  //   const index = this.todo.indexOf(dtodo);
-  //   this.todo.splice(index,1);
+  // recievetodo(){
+  //   return this.todo;
   // }
 
-  func(at:any){
-    // this.updatetodo(atodo);
-    console.log(at);
-    this.us.next(at);
+  deletetodo(dtodo:Todo){
+    console.log("delete todo works");
+    const index = this.todo.indexOf(dtodo);
+    this.todo.splice(index,1);
   }
+
+  // func(at:any){
+  //   // this.updatetodo(atodo);
+  //   console.log(at);
+  //   this.us.next(at);
+  // }
   
 
   

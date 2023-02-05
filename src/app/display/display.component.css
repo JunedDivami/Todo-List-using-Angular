@@ -1,5 +1,13 @@
 div{
-    border: 2px solid black;
-    padding: 0px 15px;
-    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li{
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+    padding: 5px;
+    border-radius: 10px;
 }

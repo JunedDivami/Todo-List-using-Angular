@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-input-com',
@@ -6,13 +6,20 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
   styleUrls: ['./input-com.component.css'],
 })
 export class InputComComponent {
-  @ViewChild('inp') inp?:ElementRef;
-  title:string = ''
+  @Input() d:number = 0;
+  @Output() sendData = new EventEmitter();
+  title:string = '';
+  desc:string = '';
   
 
-  valueInput = this.inp?.nativeElement.value;
-
-  constructor(){
-    // console.log(this.valueInput);
+  ngOnChanges(changes: { [property: string]: SimpleChange }) {
+    // Extract changes to the input property by its name
+    let change: SimpleChange = changes['d'];
+    // console.log(this.title+ "from input component");
+    this.sendData.emit(this.title);
+    this.title = '';
+    // setTimeout(() => {this.title = ''}, 100);
   }
+
+  constructor(){}
 }
